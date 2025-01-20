@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/d4940f2a62.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel="stylesheet" href="/stylesheets/register.css">
+  </head>
+
+  <body>
+    <header>
+      
+
+        <section class="section_header">
+          <h1 class="Logo"><a href="#"><%= title %></a></h1>
+          <nav class="header__nav">
+            <ul class="header_ul">
+                <li class="header__li"><a href="/home">Géneros</a></li>
+                <li class="header__li"><a href="/home">Series</a></li>
+                <li class="header__li"><a href="/home">Peliculas</a></li>
+                <li class="header__li"><a href="/vip">VIP</a></li>
+            </ul>
+          </nav>
+            <div class="buscador">
+                <form action="#">
+                    <input type="text" placeholder="Buscar Peliculas">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+          <nav class="header__nav">
+              <ul class="header_ul">
+                  <li class="header__li"><a href="#"><i class="fa-solid fa-user"></i></a> </li>
+                  <li class="header__li"><a href="/admin"><i class="fa-solid fa-crown"></i></a></li>
+              </ul>
+          </nav>
+
+        </section>
+
+
+    </header>
+
+    <main>
+        <h1>Register</h1>    
+        <section class="section_login">
+            <div class="div1">
+                <h2>Completa los datos para crear tu cuenta</h2>
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-google"></i>Crear con tu cuenta de google</a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook"></i>Crear con tu cuenta de facebook</a></li>
+                </ul>
+            </div>
+            <div class="div2" >
+                <form action="/register" method="post">
+                    <input type="email"  name="email" placeholder="Registra un email" required>
+                    <input type="password" name="password" placeholder="Crea una contraseña" required>
+                    <input type="password" name="confirmar_contraseña" placeholder="Confirmar contraseña" required>
+                    <button type="submit">Crear cuenta</button>
+                </form>
+                <p>Ya tienes una cuenta?<a href="/login">Ingresar</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+
+        <section class="footer_section">
+          <h4>Copyright © 2025 Kongflix.com todos los derechos reservados.</h4>
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home">Contacto</a></li>
+            <li><a href="/home">Preguntas frecuentes</a></li>
+            <li><a href="/home">Ayuda</a></li>
+          </ul>
+        </section>
+
+        
+    </footer>
+</body>

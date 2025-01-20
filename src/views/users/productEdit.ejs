@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/d4940f2a62.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel="stylesheet" href="/stylesheets/product.css">
+  </head>
+
+  <body>
+    <header>
+      
+
+        <section class="section_header">
+          <h1 class="Logo"><a href="/home">Kongflix</a></h1>
+          <nav class="header__nav">
+            <ul class="header_ul">
+                <li class="header__li"><a href="/home">Géneros</a></li>
+                <li class="header__li"><a href="/home">Series</a></li>
+                <li class="header__li"><a href="/home">Peliculas</a></li>
+                <li class="header__li"><a href="/vip">VIP</a></li>
+            </ul>
+          </nav>
+            <div class="buscador">
+                <form action="#">
+                    <input type="text" placeholder="Buscar Peliculas">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+          <nav class="header__nav">
+              <ul class="header_ul">
+                  <li class="header__li"><a href="/login"><i class="fa-solid fa-user"></i></a> </li>
+                  <li class="header__li"><a href="/admin"><i class="fa-solid fa-crown"></i></a></li>
+              </ul>
+          </nav>
+
+        </section>
+
+
+    </header>
+
+    <main>
+        <h1>Editar Pelicula</h1>    
+        <section class="section_add">
+            <div>
+                <form action="#">
+                    <input type="text" class="titulo" placeholder="Titulo">
+                    <input type="text" class="año" placeholder="Año">
+                    <input type="text" class="peso" placeholder="Tamaño">
+                    <input type="text" class="calidad" placeholder="Calidad">
+                    <input type="text" class="audio" placeholder="Idioma (aud)">
+                    <input type="text" class="subtitulo" placeholder="Idioma (sub)">
+                    <input type="text" class="formato" placeholder="Formato">
+                    <input type="text" class="link" placeholder="Link">
+                    <input type="file" class="imagen" required> 
+                    <textarea name="descripción" id="descripción" rows="5" cols="50" placeholder="Sinopsis"></textarea>
+                    <button type="submit">Resubir Pelicula</button>
+                </form>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+
+        <section class="footer_section">
+          <h4>Copyright © 2025 Kongflix.com todos los derechos reservados.</h4>
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home">Contacto</a></li>
+            <li><a href="/home">Preguntas frecuentes</a></li>
+            <li><a href="/home">Ayuda</a></li>
+          </ul>
+          
+        </section>
+
+        
+    </footer>
+</body>

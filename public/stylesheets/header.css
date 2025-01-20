@@ -1,0 +1,68 @@
+header{
+    background-color: #0F1416;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", system-ui;
+    font-weight: 100;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+.Logo{
+    font-size: 30px;
+    font-weight: 800;
+    filter: drop-shadow(1px 1px 10px #aa1f1f);
+        
+}
+.buscador{
+    input,
+    button{
+        padding: 9px 9px 9px 9px;
+    }
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+}
+
+li{
+    list-style: none;
+}
+
+.section_header{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: auto;
+
+
+}
+
+.div_menu{
+    display: flex;
+    justify-content: space-between;
+
+
+    .header__nav1 ul{
+        display: flex;
+        padding: 0;
+        
+    }
+
+    .header__nav2 ul{
+        font-size: 70px;
+        
+    }
+}
+
+.header__li{
+    padding: 20px;
+    }
+
+.header_ul{
+    display: flex;
+}

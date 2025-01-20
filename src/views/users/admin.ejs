@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <script src="https://kit.fontawesome.com/d4940f2a62.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/footer.css' />
+    <link rel='stylesheet' href='/stylesheets/header.css' />
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+  </head>
+
+  <body>
+    <header>
+      
+
+        <section class="section_header">
+          <h1 class="Logo"><a href="/home">Kongflix</a></h1>
+          <nav class="header__nav">
+            <ul class="header_ul">
+                <li class="header__li"><a href="/home">Géneros</a></li>
+                <li class="header__li"><a href="/home">Series</a></li>
+                <li class="header__li"><a href="/home">Peliculas</a></li>
+                <li class="header__li"><a href="/vip">VIP</a></li>
+            </ul>
+          </nav>
+            <div class="buscador">
+                <form action="#">
+                    <input type="text" placeholder="Buscar Peliculas">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+
+          <nav class="header__nav">
+              <ul class="header_ul">
+                  <li class="header__li"><a href="/login"><i class="fa-solid fa-user"></i></a> </li>
+                  <li class="header__li"><a href="/admin"><i class="fa-solid fa-crown"></i></a></li>
+              </ul>
+          </nav>
+
+        </section>
+
+
+    </header>
+
+    <main>
+        <h1>Admin</h1>    
+        <section class="section_admin">
+            
+            <div class="nuevos_precios">
+                <h2>Actualizar Precios de Membresías</h2>
+                <form action="#">
+                    <input type="number"  name="Membresia1" placeholder="Membresia Internauta" required>
+                
+                    <input type="number"  name="Membresia2" placeholder="Membresia Aspirante " required>
+                
+                    <input type="number"  name="Membresia3" placeholder="Membresia señor de mordor" required>
+                
+                    <input type="number"  name="Membresia4" placeholder="Membresia Kongflix" required>
+                
+                    <button type="submit">Actualizar Precios</button>
+                </form>
+            </div>
+
+            <div class="modificar">
+                <h2>Editar Peliculas</h2>
+                <a class="agregar" href="/productAdd">Agregar</a>
+                <a class="modificar" href="/productEdit">Modificar</a>
+                <a class="eliminar" href="/productDelete">Eliminar</a>
+            </div>
+            
+            
+        </section>
+    </main>
+
+    <footer>
+
+        <section class="footer_section">
+          <h4>Copyright © 2025 Kongflix.com todos los derechos reservados.</h4>
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/home">Contacto</a></li>
+            <li><a href="/home">Preguntas frecuentes</a></li>
+            <li><a href="/home">Ayuda</a></li>
+          </ul>
+          
+        </section>
+
+        
+    </footer>
+</body>

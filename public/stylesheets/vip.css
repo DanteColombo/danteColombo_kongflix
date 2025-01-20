@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 0px;
+    font-size: 40px;
+}
+h5{
+    filter: drop-shadow(2px 4px 6px rgb(248, 252, 39));
+    margin: 0px;
+    font-size: 22px;
+}
+h6{
+    margin: 8px 0 8px 0;
+    font-size: 21px;
+}
+.section_vip{
+    display: flex;
+    justify-content: space-evenly;
+    div{
+        filter: drop-shadow(10px 4px 6px black);
+        padding: 10px;
+        border-radius: 2%;
+        background-color: #424848;
+    }
+    ul{
+        font-weight: bold;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 40px 0 40px;
+    }
+    button{
+        border: none;
+        cursor: pointer;
+        background-color: #a1000a;
+        padding: 7px;
+    }
+    button:hover{
+        background-color: #5f0383;
+
+        transition: all .5 ease;
+    }
+}

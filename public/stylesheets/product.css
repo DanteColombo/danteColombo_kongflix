@@ -1,0 +1,34 @@
+
+h1{
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 0px;
+    font-size: 40px;
+}
+
+.section_add{
+    display: flex;
+    justify-content: center;
+    div{
+        background-color: #424848;
+        width: 50%;
+    }
+    form{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    input{
+        padding: 15px 10px 15px 10px;
+    }
+    button{
+        padding: 5px 6px 5px 6px;
+        color: white;
+        border: none;
+        background-color: #2f00d9;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 0px;
+}
+.info_pelicula{
+    display: flex;
+    justify-content: space-evenly;
+
+    a{
+        color: #4163ff;
+    }
+
+    h5{
+        font-size: 20px;
+    }
+    
+    div{
+
+        background-color: #424848;
+        width: 70%;
+    }
+}

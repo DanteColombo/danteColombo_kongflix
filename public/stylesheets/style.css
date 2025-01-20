@@ -1,0 +1,101 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", system-ui;
+  font-weight: 100vh;
+  font-style: normal;
+  background-color: #ebebeb;
+}
+main{
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 60px;
+  background-color: #565656
+}
+
+body{
+  font-weight: 100;
+  font-style: normal;
+}
+
+h2{
+  text-align: center;
+  padding-left: 3%;
+  width: 100%;
+}
+
+h3{
+  font-size: 18px;
+}
+
+
+h1{
+  font-size: 24px;
+  text-align: start;
+  padding-left: 3%;
+}
+h4{
+  font-size: 16px;
+  color: #666;
+
+}
+
+h6{
+  font-size: 16px;
+  
+}
+
+p{
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .buger_menu1{
+      display: none;
+  }
+  .Section_recomendaciones{
+    display: none;
+  }
+
+  
+}
+
+
+@media (max-width: 767px){
+  .div_menu{
+      display: none;
+  }
+  #fondo{
+      display: none;
+  }
+}
+
+
+@media (min-width: 1024px){
+
+  .Section_recomendaciones{
+    display: block;
+  }
+
+  .header__nav{
+    a:hover{
+      color: #408bea;
+    }
+  }
+  
+  .caja h4{
+      max-height: 0;
+      overflow: hidden;
+      visibility: hidden;
+  }
+  
+  .caja:hover h4{
+      opacity: 1;
+      visibility: visible;
+      max-height: 100px
+  }
+  .product:hover{
+      box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  }
+}
+
