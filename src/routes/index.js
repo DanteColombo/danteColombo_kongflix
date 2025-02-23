@@ -1,74 +1,65 @@
 var express = require('express');
 var router = express.Router();
+const multer = require("multer");
+const onlyAdmins = require('../middlewares/onlyAdmins.js');
+const upload = require("../middlewares/usersImages");
+const usersController = require("../controllers/controller"); 
+var {index,admin,  list ,detail , add ,edit, create, update, remove, register, registerProcess, login, loginProcess} = require('../controllers/controller');
 
 
-router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Kongflix' });
+router.get('/', index);
+
+
+router.get('/home', index);
+
+router.get('/lista', list)
+
+router.get('/pelicula/:id', detail)
+
+router.get('/productAdd', add)
+
+
+router.post('/productAdd', create)
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+      cb(null, "public/uploads/");
+  },
+  filename: (req, file, cb) => {
+      cb(null, Date.now() + "-" + file.originalname);
+  },
 });
-router.get('/home', function(req, res, next) {
-  res.render('home', { title: 'Kongflix' });
-});
-router.get('/pelicula', (req, res) => {
-  res.render('pelicula', { title: 'Pelicula' });
-});
-router.get('/login', (req, res) => {
-  res.render('login', { title: 'Login' });
-});
-router.get('/register', (req, res) => {
-  res.render('register', { title: 'Register' });
-});
+
+
+router.get('/productEdit/:id', edit)
+
+router.put('/update/:id', update)
+
+router.delete('/remove/:id', remove);
+
+
+
 router.get('/recup', (req, res) => {
-  res.render('recup', { title: 'Recuperar' });
+  res.render('recup',);
 });
 router.get('/nueva', (req, res) => {
-  res.render('nueva', { title: 'Nueva' });
+  res.render('nueva', );
 });
 router.get('/vip', (req, res) => {
-  res.render('vip', { title: 'Vip' });
-});
-router.get('/productAdd', (req, res) => {
-  res.render('productAdd', { title: 'Agregar' });
-});
-router.get('/productEdit', (req, res) => {
-  res.render('productEdit', { title: 'Editar' });
-});
-router.get('/productDelete', (req, res) => {
-  res.render('productDelete', { title: 'Eliminar' });
-});
-router.get('/admin', (req, res) => {
-  res.render('admin', { title: 'Admin' });
+  res.render('vip',);
 });
 
 
+router.get('/admin',onlyAdmins, admin);
 
-router.post('/register', (req, res) => {
-  console.log(req.body); 
+router.get('/register', register);
 
-  const { email, password, confirmar_contraseña } = req.body;
-
-  if (!email || !password || !confirmar_contraseña) {
-      return res.status(400).send('Todos los campos son obligatorios');
-  }
-
-  if (password !== confirmar_contraseña) {
-      return res.status(400).send('Las contraseñas no coinciden');
-  }
-
-  res.send('Usuario registrado correctamente');
-});
+router.post('/registerProcess',upload.single("profileImage"), registerProcess);
 
 
-router.post('/login', (req, res) => {
-  const { email, password, recordar } = req.body;
-  
-  if (recordar) {
-      
-      res.cookie('email', email, { maxAge: 30 * 24 * 60 * 60 * 1000 }); 
-  }
+router.get('/login', login);
 
-  
-  res.redirect('/home');
-});
+router.post('/loginProcess', loginProcess);
 
 
 router.post('/recup', async (req, res) => {

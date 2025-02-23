@@ -50,16 +50,76 @@ h1{
             text-align: center;
             border-radius: 5px;
             border: none;
-            width:364.688px;
+
         }
         .agregar:hover{
             background-color: green;
         }
+    }
+    }
+    
+.editar_pelis{
+        
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        display: contents;
+
+        a,button{
+            color: rgb(255, 255, 255);
+            display: inline-block;
+            padding: 10px 20px 10px 20px;
+            background-color: #222a2b;
+            text-align: center;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
         .modificar:hover{
             background-color: yellow;
         }
-        .eliminar:hover{
+        button:hover{
+
+            cursor: pointer;
             background-color: red;
         }
     }
+
+    .grid-container {
+        background-color: #f8f9fa;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr; 
+        gap: 10px;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+    
+    .cell {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+    
+    .header {
+        font-weight: bold;
+        background-color: #333;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+    }
+    
+    .actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    
+

@@ -1,50 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <script src="https://kit.fontawesome.com/d4940f2a62.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel='stylesheet' href='/stylesheets/footer.css' />
-    <link rel='stylesheet' href='/stylesheets/header.css' />
-    <link rel='stylesheet' href='/stylesheets/home.css' />
-  </head>
+    <%- include('../partials/head',{title: 'home'})%>
 
   <body>
-    <header>
-      
-
-        <section class="section_header">
-          <h1 class="Logo"><a href="#">Kongflix</a></h1>
-          <nav class="header__nav">
-            <ul class="header_ul">
-                <li class="header__li"><a href="/home">Géneros</a></li>
-                <li class="header__li"><a href="/home">Series</a></li>
-                <li class="header__li"><a href="/home">Peliculas</a></li>
-                <li class="header__li"><a href="/vip">VIP</a></li>
-            </ul>
-          </nav>
-            <div class="buscador">
-                <form action="#">
-                    <input type="text" placeholder="Buscar Peliculas">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </form>
-            </div>
-
-          <nav class="header__nav">
-              <ul class="header_ul">
-                  <li class="header__li"><a href="/login"><i class="fa-solid fa-user"></i></a> </li>
-                  <li class="header__li"><a href="/admin"><i class="fa-solid fa-crown"></i></a></li>
-              </ul>
-          </nav>
-
-        </section>
-
-
-        
-
-    </header>
+    <%- include('../partials/header')%>
 
     <main>
 
@@ -59,25 +18,25 @@
                 <h2>Recomendaciones</h2>
                 <article class="caja">
                     <div class="pelicula_recomendada">
-                        <img src="/images/sinister.jpg" alt="imagen de pelicula">
+                        <img src="/images/products/sinister.jpg" alt="imagen de pelicula">
                         <a class="terror" href="/pelicula">Mejores peliculas de terror</a>
                     </div>
                 </article>
                 <article class="caja">
                     <div class="pelicula_recomendada">
-                        <img  src="/images/boda.jpg" alt="imagen de pelicula">
+                        <img  src="/images/products/boda.jpg" alt="imagen de pelicula">
                         <a class="comedia" href="/pelicula">Mejores peliculas de comedia</a>
                     </div>
                 </article>
                 <article class="caja">
                     <div class="pelicula_recomendada">
-                        <img  src="/images/vengadores.webp" alt="imagen de pelicula">
+                        <img  src="/images/products/vengadores.webp" alt="imagen de pelicula">
                         <a class="superheroes" href="/pelicula">Mejores peliculas de superheroes</a>
                     </div>
                 </article>
                 <article class="caja">
                     <div class="pelicula_recomendada">
-                        <img  src="/images/spiderman.jpeg" alt="imagen de pelicula">
+                        <img  src="/images/products/spiderman.jpeg" alt="imagen de pelicula">
                         <a class="animadas" href="/pelicula">Mejores peliculas animadas</a>
                     </div>
                 </article>
@@ -85,237 +44,81 @@
 
             <section class="Section_añadidas">
                 <h2>Recientes</h2>
-                
 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/wolverine.jpeg" alt="imagen de pelicula">
-                        </a>
-                        <div class="detalles">
+                <% products.filter(products => products.category == "reciente").forEach(({id, año, titulo, descripción, imagen}) => { %>
+                    <article class="caja">
+                        <div class="product">
+                            <a href="/pelicula/<%= id %>">
+                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                            </a>
+                            <div class="detalles">
 
-                            <div class="descripción">
-                                <h3>Pelicula 2020</h3>
+                                <div class="descripción">
+                                    <h3><%= titulo %> <%= año %></h3>
+                                </div>
+                                <h4><%= descripción %></h4>
                             </div>
-                            <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
+
                         </div>
-
-                    </div>
-                </article>
-
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/jhonwick.jpg" alt="imagen de pelicula">
-                        </a>
-
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-                    </div>
-                </article >
-
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/soyleyenda.jpg" alt="imagen de pelicula">
-                        </a>
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-
-                    </div>
-                </article>
+                    </article>
+                <% }) %>
+            
                 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/smile.jpg" alt="imagen de pelicula">
-                        </a>
 
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-
-                    </div>
-                </article>
 
             </section>
 
             <section class="Section_peliculas">
                 <h2>Peliculas</h2>
                 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/wolverine.jpeg" alt="imagen de pelicula">
-                        </a>
-                        <div class="detalles">
+                <% products.filter(products => products.category == "pelicula").forEach(({id, año, titulo, descripcion, imagen}) => { %>
+                    <article class="caja">
+                        <div class="product">
+                            <a href="/pelicula/<%= id %>">
+                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                            </a>
+                            <div class="detalles">
 
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
+                                <div class="descripción">
+                                    <h3><%= titulo %> <%= año %></h3>
+                                </div>
+                                <h4><%= descripcion %></h4>
+                            </div>
+
                         </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-                    </div>
-                </article>
+                    </article>
+                <% }) %>
 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/jhonwick.jpg" alt="imagen de pelicula">
-                        </a>
-
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-
-                    </div>
-                </article>
-
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/soyleyenda.jpg" alt="imagen de pelicula">
-                        </a>
-
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-
-                    </div>
-                    
-                </article>
                 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/smile.jpg" alt="imagen de pelicula">
-                        </a>
-
-                        <div class="detalles">
-
-                        <div class="descripción">
-                            <h3>Pelicula 2020</h3>
-                        </div>
-                        <h4>esta es una pelicula sobre, que trata, estrenada en, protagonizada por...</h4>
-                    </div>
-
-                    </div>
-                </article>
-
             </section>
 
             <section class="Section_series">
                 <h2>Series</h2>
                 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/wolverine.jpeg" alt="imagen de pelicula">
-                        </a>
+                <% products.filter(products => products.category == "serie").forEach(({id, año, titulo, descripcion, imagen}) => { %>
+                    <article class="caja">
+                        <div class="product">
+                            <a href="/pelicula/<%= id %>">
+                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                            </a>
+                            <div class="detalles">
 
-                        <div class="detalles">
-
-                            <div class="descripción">
-                                <h3>Serie 2020</h3>
+                                <div class="descripción">
+                                    <h3><%= titulo %> <%= año %></h3>
+                                </div>
+                                <h4><%= descripcion %></h4>
                             </div>
-                            <h4>esta es una Serie sobre, que trata, estrenada en, protagonizada por...</h4>
+
                         </div>
-                    </div>
-                </article>
+                    </article>
+                <% }) %>
 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/jhonwick.jpg" alt="imagen de pelicula">
-                        </a>
-                        
-
-                        <div class="detalles">
-
-                            <div class="descripción">
-                                <h3>Serie 2020</h3>
-                            </div>
-                            <h4>esta es una Serie sobre, que trata, estrenada en, protagonizada por...</h4>
-                        </div>
-
-                    </div>
-                </article>
-
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/soyleyenda.jpg" alt="imagen de pelicula">
-                        </a>
-
-                        <div class="detalles">
-
-                            <div class="descripción">
-                                <h3>Serie 2020</h3>
-                            </div>
-                            <h4>esta es una Serie sobre, que trata, estrenada en, protagonizada por...</h4>
-                        </div>
-
-                    </div>
-                    
-                </article>
                 
-                <article class="caja">
-                    <div class="product">
-                        <a href="/pelicula">
-                            <img width="240" height="240" src="/images/smile.jpg" alt="imagen de pelicula">
-                        </a>
-                        
-
-                        <div class="detalles">
-
-                            <div class="descripción">
-                                <h3>Serie 2020</h3>
-                            </div>
-                            <h4>esta es una Serie sobre, que trata, estrenada en, protagonizada por...</h4>
-                        </div>
-
-                    </div>
-                </article>
             </section>
 
         </section>
     </main>
 
-    <footer>
-
-        <section class="footer_section">
-          <h4>Copyright © 2025 Kongflix.com todos los derechos reservados.</h4>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Contacto</a></li>
-            <li><a href="">Preguntas frecuentes</a></li>
-            <li><a href="">Ayuda</a></li>
-          </ul>
-          <a href="#"><i class="fa-solid fa-arrow-up"></i></a>
-        </section>
-
-        
-    </footer>
+    <%- include('../partials/footer')%>
+    
 </body>
