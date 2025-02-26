@@ -45,16 +45,16 @@
             <section class="Section_añadidas">
                 <h2>Recientes</h2>
 
-                <% products.filter(products => products.category == "reciente").forEach(({id, año, titulo, descripción, imagen}) => { %>
+                <% products.filter(products => products.category == "reciente").forEach(({id, anio, titulo, descripción ,fotoPelicula}) => { %>
                     <article class="caja">
                         <div class="product">
                             <a href="/pelicula/<%= id %>">
-                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                                <img width="240" height="240" src="/images/movies/<%= fotoPelicula %>" alt="imagen de pelicula">
                             </a>
                             <div class="detalles">
 
                                 <div class="descripción">
-                                    <h3><%= titulo %> <%= año %></h3>
+                                    <h3><%= titulo %> <%= anio %></h3>
                                 </div>
                                 <h4><%= descripción %></h4>
                             </div>
@@ -71,16 +71,16 @@
             <section class="Section_peliculas">
                 <h2>Peliculas</h2>
                 
-                <% products.filter(products => products.category == "pelicula").forEach(({id, año, titulo, descripcion, imagen}) => { %>
+                <% products.filter(products => products.category == "pelicula").forEach(({id, anio, titulo, descripcion, fotoPelicula}) => { %>
                     <article class="caja">
                         <div class="product">
                             <a href="/pelicula/<%= id %>">
-                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                                <img width="240" height="240" src="/images/movies/<%= fotoPelicula %>" alt="imagen de pelicula">
                             </a>
                             <div class="detalles">
 
                                 <div class="descripción">
-                                    <h3><%= titulo %> <%= año %></h3>
+                                    <h3><%= titulo %> <%= anio %></h3>
                                 </div>
                                 <h4><%= descripcion %></h4>
                             </div>
@@ -95,16 +95,16 @@
             <section class="Section_series">
                 <h2>Series</h2>
                 
-                <% products.filter(products => products.category == "serie").forEach(({id, año, titulo, descripcion, imagen}) => { %>
+                <% products.filter(products => products.category == "serie").forEach(({id, anio, titulo, descripcion, fotoPelicula}) => { %>
                     <article class="caja">
                         <div class="product">
                             <a href="/pelicula/<%= id %>">
-                                <img width="240" height="240" src="/images/<%= imagen %>" alt="imagen de pelicula">
+                                <img width="240" height="240" src="/images/movies/<%= fotoPelicula %>" alt="imagen de pelicula">
                             </a>
                             <div class="detalles">
 
                                 <div class="descripción">
-                                    <h3><%= titulo %> <%= año %></h3>
+                                    <h3><%= titulo %> (<%= anio %>)</h3>
                                 </div>
                                 <h4><%= descripcion %></h4>
                             </div>

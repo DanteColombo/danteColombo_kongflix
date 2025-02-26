@@ -9,29 +9,37 @@
         <h1>Agregar Pelicula</h1>    
         <section class="section_add">
             <div>
-                <form action="/productAdd" method="POST" >
+                <form action="/productAdd" method="POST"  enctype="multipart/form-data">
 
                     
                     <input type="text" name="titulo" class="titulo" id="titulo" placeholder="titulo" required>
+
+                    <select name="genero" id="genero" required>
+                      <option value="" hidden selected >Elige un genero</option>
+                      <% generos.forEach(genero => { %>
+                        <option value="<%= genero %>"  ><%= genero %></option>
+                      <% }) %>
+                    </select>
 
                     <select name="category" id="category" required>
                       <option value="" hidden selected >Elige una opcion</option>
                       <% categories.forEach(category => { %>
                         <option value="<%= category %>"  ><%= category %></option>
                       <% }) %>
-                    
                     </select>
-                    <input type="number" name="año" class="año" id="año" placeholder="año" required>
+
+                    <input type="number" name="anio" class="anio" id="anio" placeholder="año" required>
+
                     <input type="number" name="peso" class="peso" id="peso" placeholder="tamaño" required>
 
-                    <select name="calidad" id="calidad">
+                    <select name="calidad" id="calidad" required>
                       <option value="" hidden selected>Elige la calidad</option>
                       <% calidades.forEach(calidad => { %>
                         <option value="<%= calidad %>" ><%= calidad %></option>
                       <% }) %>
                     </select>
 
-                    <select name="resolucion" id="resolucion">
+                    <select name="resolucion" id="resolucion" required>
                       <option value="" hidden selected>Elige la resolución</option>
                       <% resoluciones.forEach(resolucion => { %>
                         <option value="<%= resolucion %>" ><%= resolucion %></option>
@@ -59,9 +67,12 @@
                       <% }) %>
                     </select>
 
-                      <input type="text" name="link" class="link"  id="link" placeholder="link" required>
+                    <input type="text" name="link" class="link"  id="link" placeholder="link" required>
+
+                    <input type="file" class="fotoPelicula" id="fotoPelicula" name="fotoPelicula" accept=".jpg,.jpeg,.png" placeholder="Ingrese la foto de la pelicula">
                     
-                    <textarea name="descripción" id="descripción" rows="5" cols="50" placeholder="sinopsis" required></textarea>
+                    <textarea class="descripcion" name="descripcion" id="descripcion" rows="5" cols="50" placeholder="sinopsis" required></textarea>
+
                     <button type="submit">Subir Pelicula</button>
                 </form>
             </div>

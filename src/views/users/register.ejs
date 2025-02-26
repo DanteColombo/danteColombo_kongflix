@@ -17,11 +17,17 @@
             </div>
             <div class="div2" >
                 <form action="/registerProcess" method="post" enctype="multipart/form-data">
+
                     <input type="email"   class="email" id="email" name="email" placeholder="Registra un email" required>
+
                     <input type="password" class="password" id="password" name="password" placeholder="Crea una contraseña" required>
+
                     <input type="password" class="confirmar_contrasena" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Confirmar contrasena" required>
+
                     <input type="file" id="profileImage" class="profileImage" name="profileImage" accept="image/*" placeholder="Ingrese su foto de perfil">
+                    
                     <button type="submit">Crear cuenta</button>
+
                 </form>
                 <p>Ya tienes una cuenta?<a href="/login">Ingresar</a></p>
             </div>

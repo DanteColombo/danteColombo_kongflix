@@ -15,20 +15,21 @@
         </iframe>
         
         <section class="info_pelicula">
-            <img width="236" height="354" src="/images/<%= imagen %>" alt="imagen de pelicula">
+            <img width="236" height="354" src="/images/movies/<%= fotoPelicula %>" alt="imagen de pelicula">
             
             <div class="datos_pelicula">
-                <h5><%= titulo %></h5>
-                <p><%= titulo %> <%= año %>: <%= descripción%></p>
+                <h2><%= titulo %></h2>
+                <p><%= titulo %> <%= anio %>: <%= descripcion%></p>
                 <ul>
                     <li>Título: <%= titulo %></li>
+                    <li>Genero: <%= genero %></li>
                     <li>Tamaño Del Archivo: <%= peso %> GB</li>
                     <li>Calidad: <%= calidad %></li>
                     <li>Resolución: <%= resolucion %> </li>
                     <li>Audio: <%= idiomaAud %></li>
                     <li>Subtitulos: <%= idiomaSub %></li>
                     <li>Formato: <%= formato %></li>
-                    <li>Descargar:<a href="#"><%= link%></a></li>
+                    <li>Descargar: <a href="#"> <%= link%></a></li>
                 </ul> 
             </div>
         </section>

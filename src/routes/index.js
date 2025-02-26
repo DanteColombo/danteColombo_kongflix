@@ -4,11 +4,11 @@ const multer = require("multer");
 const onlyAdmins = require('../middlewares/onlyAdmins.js');
 const upload = require("../middlewares/usersImages");
 const usersController = require("../controllers/controller"); 
+const uploadMovies = require("../middlewares/uploadMovies");
 var {index,admin,  list ,detail , add ,edit, create, update, remove, register, registerProcess, login, loginProcess} = require('../controllers/controller');
 
 
 router.get('/', index);
-
 
 router.get('/home', index);
 
@@ -18,18 +18,7 @@ router.get('/pelicula/:id', detail)
 
 router.get('/productAdd', add)
 
-
-router.post('/productAdd', create)
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-      cb(null, "public/uploads/");
-  },
-  filename: (req, file, cb) => {
-      cb(null, Date.now() + "-" + file.originalname);
-  },
-});
-
+router.post("/productAdd", uploadMovies.single("fotoPelicula"),create);
 
 router.get('/productEdit/:id', edit)
 

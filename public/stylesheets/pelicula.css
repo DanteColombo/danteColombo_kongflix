@@ -11,14 +11,22 @@ h1{
         color: #4163ff;
     }
 
-    h5{
-        font-size: 20px;
+    h2{
+        filter: drop-shadow(2px 4px 6px rgb(248, 252, 39));
+        margin: 0px;
+        
     }
+
     
     div{
-
+        justify-content: center;
         background-color: #424848;
         width: 70%;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
     }
 }
 

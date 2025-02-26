@@ -3,11 +3,12 @@ const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const bcrypt = require('bcrypt');
 const products = require('../data/products.json')
-const categories = require('../data/categories.json')
-const idioma = require('../data/idioma.json');
-const formatos = require ('../data/formatos.json');
-const calidades = require ('../data/calidades.json')
-const resoluciones = require('../data/resoluciones.json')
+const categories = require('../data/opciones/categories.json')
+const idioma = require('../data/opciones/idioma.json');
+const formatos = require ('../data/opciones/formatos.json');
+const calidades = require ('../data/opciones/calidades.json')
+const resoluciones = require('../data/opciones/resoluciones.json')
+const generos = require('../data/opciones/generos.json')
 const { isUtf8 } = require('buffer');
 const { readJson, saveJson } = require('../data');
 const { emit } = require('process');
@@ -55,24 +56,31 @@ module.exports = {
           idioma,
           formatos,
           calidades,
-          resoluciones
+          resoluciones,
+          generos
         }
          );
 
       },
 
     create: (req, res) => {
-
+        console.log("Archivo subido:", req.file);
+        console.log("Datos del formulario:", req.body);
+        if (!req.file) {
+          return res.status(400).send("No se subió ningún archivo");
+      }
         const products = readJson('/products.json')
       
-        
-        const {id, category, titulo, año, peso, calidad, resolucion,  idiomaAud, idiomaSub, formato, link, descripción} = req.body
+        const {id, category, titulo, genero, anio, peso, calidad, resolucion,  idiomaAud, idiomaSub, formato, link, descripcion} = req.body;
+
+        const fotoPelicula = req.file.filename;
 
         const newProduct = {
             id: products[products.length - 1].id + 1,
             category,
             titulo : titulo.trim(),
-            año: +año,
+            genero,
+            anio: +anio,
             peso : +peso,
             calidad,
             resolucion,
@@ -80,17 +88,14 @@ module.exports = {
             idiomaSub,
             formato,
             link: link.trim(),
-            descripción: descripción.trim(),
-            imagen: "../images/products/wolverine.jpeg"
-           
+            fotoPelicula,
+            descripcion: descripcion.trim()
+            
         }
-
-        
 
         products.push(newProduct)
         saveJson('products.json',products)
     
-
         return res.redirect('/pelicula/' + newProduct.id)
       },
 
@@ -98,7 +103,7 @@ module.exports = {
       
       const {id}= req.params
       const products = readJson('/products.json')
-      const categories= readJson('/categories.json')
+      const categories= readJson('/opciones/categories.json')
 
       const product = products.find(product => product.id === +id)
 
@@ -114,13 +119,13 @@ module.exports = {
 
       const products = readJson('products.json')
 
-      const {category, titulo, año} = req.body
+      const {category, titulo, anio} = req.body
 
       const productsModify = products.map(product => {
         if(product.id === +req.params.id){
             product.category = category;
             product.titulo = titulo.trim();
-            product.año = +año;
+            product.anio = +anio;
         }
         return product
     })
