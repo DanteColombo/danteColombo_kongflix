@@ -23,7 +23,20 @@
                     </select>
                     <input type="number" name="año" class="año" id="año" placeholder="año" required>
                     <input type="number" name="peso" class="peso" id="peso" placeholder="tamaño" required>
-                    <input type="text" name="calidad" class="calidad" id="calidad" placeholder="calidad" required>
+
+                    <select name="calidad" id="calidad">
+                      <option value="" hidden selected>Elige la calidad</option>
+                      <% calidades.forEach(calidad => { %>
+                        <option value="<%= calidad %>" ><%= calidad %></option>
+                      <% }) %>
+                    </select>
+
+                    <select name="resolucion" id="resolucion">
+                      <option value="" hidden selected>Elige la resolución</option>
+                      <% resoluciones.forEach(resolucion => { %>
+                        <option value="<%= resolucion %>" ><%= resolucion %></option>
+                      <% }) %>
+                    </select>
 
                     <select name="idiomaAud" id="idiomaAud" required>
                       <option value="" hidden selected>Elige el Idioma (aud)</option>
@@ -38,8 +51,15 @@
                         <option value="<%= idiomaSub %>"  ><%= idiomaSub %></option>
                       <% }) %>
                     </select>
-                    <input type="text" name="formato" class="formato" id="formato" placeholder="formato" required>
-                    <input type="text" name="link" class="link"  id="link" placeholder="link" required>
+
+                    <select name="formato" id="formato">
+                      <option value="" hidden selected>Elige el formato</option>
+                      <% formatos.forEach(formato => { %>
+                        <option value="<%= formato %>" ><%= formato %></option>
+                      <% }) %>
+                    </select>
+
+                      <input type="text" name="link" class="link"  id="link" placeholder="link" required>
                     
                     <textarea name="descripción" id="descripción" rows="5" cols="50" placeholder="sinopsis" required></textarea>
                     <button type="submit">Subir Pelicula</button>
@@ -50,6 +70,5 @@
         </section>
     </main>
 
-    <%- include('../partials/footer')%>
     
 </body>

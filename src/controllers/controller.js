@@ -5,6 +5,9 @@ const bcrypt = require('bcrypt');
 const products = require('../data/products.json')
 const categories = require('../data/categories.json')
 const idioma = require('../data/idioma.json');
+const formatos = require ('../data/formatos.json');
+const calidades = require ('../data/calidades.json')
+const resoluciones = require('../data/resoluciones.json')
 const { isUtf8 } = require('buffer');
 const { readJson, saveJson } = require('../data');
 const { emit } = require('process');
@@ -49,7 +52,10 @@ module.exports = {
         const products = readJson('/products.json')
         return res.render('productAdd',{
           categories,
-          idioma
+          idioma,
+          formatos,
+          calidades,
+          resoluciones
         }
          );
 
@@ -60,7 +66,7 @@ module.exports = {
         const products = readJson('/products.json')
       
         
-        const {id, category, titulo, año, peso, calidad, idiomaAud, idiomaSub, formato,link, descripción} = req.body
+        const {id, category, titulo, año, peso, calidad, resolucion,  idiomaAud, idiomaSub, formato, link, descripción} = req.body
 
         const newProduct = {
             id: products[products.length - 1].id + 1,
@@ -68,10 +74,11 @@ module.exports = {
             titulo : titulo.trim(),
             año: +año,
             peso : +peso,
-            calidad : calidad.trim(),
+            calidad,
+            resolucion,
             idiomaAud ,
             idiomaSub,
-            formato: formato.trim(),
+            formato,
             link: link.trim(),
             descripción: descripción.trim(),
             imagen: "../images/products/wolverine.jpeg"
